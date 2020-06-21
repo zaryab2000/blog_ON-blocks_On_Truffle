@@ -31,13 +31,13 @@ contract BlogOnBlocks {
         _post.forSale=_value;
         posts[_id]=_post;
     }
-    function createPost(bool _forSale,string memory _title, string memory _subtitle,string memory _content) public{
+    function createNewPost(bool _forSale,string memory _title, string memory _subtitle,string memory _content) public{
         require(bytes(_content).length > 0);
         postCount++;
         posts[postCount] = Post(postCount,_forSale,0,_title,_subtitle,_content,msg.sender);
     }
     
-    function tipPost(uint _id) payable public{
+    function buyPost(uint _id) payable public{
         Post memory _post = posts[_id];
         address payable _author = _post.author;
         address (_author).transfer(msg.value);
