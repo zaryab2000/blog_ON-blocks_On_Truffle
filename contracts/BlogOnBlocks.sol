@@ -25,7 +25,7 @@ contract BlogOnBlocks {
     function get_count() view public returns(uint){
         return postCount;
     }
-    
+    assert.equal(postData[1], true);
     function set_forSale(uint _id, bool _value) public{
         Post memory _post = posts[_id];
         _post.forSale=_value;
