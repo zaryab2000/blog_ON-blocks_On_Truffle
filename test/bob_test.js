@@ -34,7 +34,9 @@ contract("BobTest", function([owner, author, buyer]) {
   });
 
    it("For SALE functionality check", async ()=> {
-   	
+   	var postSale = await bobContract.set_forSale(1, false, {from: author});
+   	var postData = await bobContract.posts(1);
+   	assert.equal(postData[1], false);
   });
 
   it("Payment functionality check", async ()=> {
