@@ -1,5 +1,5 @@
 pragma solidity >= 0.5.0 < 0.7.0;
-
+// REdesigining Contracts 
 contract BlogOnBlocks {
 	
     //STATE VARIABLES
@@ -19,7 +19,7 @@ contract BlogOnBlocks {
     mapping(uint => Post) public posts;
     
     constructor() public{
-        name='Blog On Blocks';
+        name='Blog On Blocks version 1';
     }
     
     function get_count() view public returns(uint){
